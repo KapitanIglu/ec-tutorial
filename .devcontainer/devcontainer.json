@@ -1,15 +1,21 @@
-{
-  "name": "Creating Apps with GitHub",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "GitHub.copilot",
-        "GitHub.copilot-chat"
-      ],
-      "settings": {
-        "editor.formatOnSave": true
-      }
-    }
-  }
-}
+   {
+     "name": "Creating Apps with GitHub",
+     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+     "features": {
+       "ghcr.io/devcontainers/features/python:1": {}
+     },
+     "customizations": {
+       "vscode": {
+         "extensions": [
+           "GitHub.copilot",
+           "GitHub.copilot-chat",
+           "ms-python.python"
+         ],
+         "settings": {
+           "editor.formatOnSave": true
+         }
+       }
+     },
+     "forwardPorts": [5000],
+     "postCreateCommand": "cd python && pip install -r requirements.txt"
+   }
