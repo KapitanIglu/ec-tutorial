@@ -40,6 +40,7 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - run: pytest --tb=short
+      - run: pip install ruff && ruff check 
 
 
 # Lint steps (Lab 3 challenge — add these to your jobs):
