@@ -17,5 +17,5 @@
        }
      },
      "forwardPorts": [5000],
-     "postCreateCommand": "cd python && source .venv/bin/activate && python app.py"
-   }
+    "postCreateCommand": "cd python && python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt"
+    }
