@@ -1,6 +1,6 @@
    {
      "name": "Creating Apps with GitHub",
-     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+     "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
      "features": {
        "ghcr.io/devcontainers/features/python:1": {}
      },
@@ -17,5 +17,5 @@
        }
      },
      "forwardPorts": [5000],
-    "postCreateCommand": "cd python && python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt"
+     "postCreateCommand": "cd python && pip install -r requirements.txt"
     }
