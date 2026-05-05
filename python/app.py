@@ -51,6 +51,19 @@ def add_entry():
     if not data or not all(field in data for field in required):
         return jsonify({"error": "All fields are required: tool, task, expected, actual, verdict"}), 400
 
+    # Validate field types and lengths
+    for field in required:
+        if not isinstance(data[field], str):
+            return jsonify({"error": f"Field '{field}' must be a string"}), 400
+        if len(data[field].strip()) == 0:
+            return jsonify({"error": f"Field '{field}' must not be empty"}), 400
+        if len(data[field]) > 500:
+            return jsonify({"error": f"Field '{field}' must be 500 characters or fewer"}), 400
+
+    valid_verdicts = {"Faster", "Same", "Slower", "Surprising"}
+    if data["verdict"] not in valid_verdicts:
+        return jsonify({"error": f"Verdict must be one of: {', '.join(sorted(valid_verdicts))}"}), 400
+
     experiments = read_experiments()
     new_entry = {
         "id": f"exp-{uuid.uuid4().hex[:8]}",
@@ -90,10 +103,19 @@ def get_summary():
     # TODO: Add by_tool grouping — Lab 2
     # Add a by_tool dict that groups verdict counts per tool.
     # The frontend expects: { "<tool name>": { "Faster": 0, "Same": 0, ... } }
+    by_tool = {}
+    for exp in experiments:
+        tool = exp.get("tool", "")
+        verdict = exp.get("verdict", "")
+        if tool not in by_tool:
+            by_tool[tool] = {"Faster": 0, "Same": 0, "Slower": 0, "Surprising": 0}
+        if verdict in by_tool[tool]:
+            by_tool[tool][verdict] += 1
 
     return jsonify({
         "total": len(experiments),
         "by_verdict": by_verdict,
+        "by_tool": by_tool,
     })
 
 

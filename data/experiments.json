@@ -16,5 +16,41 @@
     "actual": "Gave a good explanation but the example used deprecated Express 3 syntax",
     "verdict": "Surprising",
     "timestamp": "2026-03-16T10:15:00Z"
+  },
+  {
+    "id": "exp-3c849a66",
+    "tool": "Copilot",
+    "task": "Write a function",
+    "expected": "Correct output",
+    "actual": "Correct output",
+    "verdict": "Faster",
+    "timestamp": "2026-05-05T09:59:34.970289+00:00"
+  },
+  {
+    "id": "exp-d3a9d0ed",
+    "tool": "Copilot",
+    "task": "Write a function",
+    "expected": "Correct output",
+    "actual": "Correct output",
+    "verdict": "Faster",
+    "timestamp": "2026-05-05T09:59:52.662482+00:00"
+  },
+  {
+    "id": "exp-269628b6",
+    "tool": "Codespaces",
+    "task": "Nothing really",
+    "expected": "I dont know",
+    "actual": "It worked!",
+    "verdict": "Same",
+    "timestamp": "2026-05-05T10:01:36.993709+00:00"
+  },
+  {
+    "id": "exp-63320e95",
+    "tool": "Copilot",
+    "task": "Write a function",
+    "expected": "Correct output",
+    "actual": "Correct output",
+    "verdict": "Faster",
+    "timestamp": "2026-05-05T12:06:10.613763+00:00"
   }
 ]
