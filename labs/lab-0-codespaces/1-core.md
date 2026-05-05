@@ -10,7 +10,7 @@
 ---
 
 ## Your Task
-a
+
 - Create a new repository out of the workshop repo ([github.com/Ba4bes/Creating-Apps-with-GitHub](https://github.com/Ba4bes/Creating-Apps-with-GitHub/)) by using the template and launch it in a Codespace.
 - The Codespace starts with a minimal base image — no language runtimes are installed yet. Your first job is to add your chosen language.
 
